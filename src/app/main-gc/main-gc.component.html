@@ -1,0 +1,32 @@
+<!-- <input (input)="Oninput($event)" /> -->
+<input [ngClass]="{ form1: product.name, form2: !product.name }" [(ngModel)]="product.name" />
+<div [ngStyle]="{ color: product.name ? 'Red' : 'Green' }">
+    <p>name is {{ product.name }} and id = {{ product.id }}</p>
+</div>
+
+<!-- custome property binding -->
+
+<sub1 [product1]="product" [val1]="product.name" [val2]="product.id" (eventvalue3)="oneventvalue3($event)" [newvalue]="newdata.value"></sub1>
+
+<!-- custome property binding -->
+
+<sub2></sub2>
+
+@for(emp of employees; track emp.id; let i=$index, c=$count, e=$even, o=$odd, f=$first, l=$last){
+    @if(l){
+        <li>{{emp.id}} - {{emp.name}}</li>
+    }
+    <li>{{emp.id}} - {{emp.name}}</li>
+}
+
+<p>child data : {{ value3 }}</p>
+
+<input #setvalue (input)="getdata1(setvalue)" />
+<p>value : {{ value4 }}</p>
+
+<input #setvalue1 (input)="getdata2()" />
+<p>value : {{ value5 }}</p>
+
+<input #newdata (input)="(0)" />
+
+<p>value : {{ newdata.value }}</p>
